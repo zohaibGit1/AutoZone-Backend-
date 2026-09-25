@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Vechile-Service
+  profiles:
+    active: dev
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: health, info, metrics
+  health:
+    show-details: always
+
+
+server:
+  port: 8081

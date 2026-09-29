@@ -28,15 +28,14 @@ public class CustomerController {
     public ResponseEntity<CustomerHistoryDto> getCustomerVehicleHistory(
             @RequestParam String search) {
         return ResponseEntity.ok(
-                customerService.getCustomerVehicleHistory(search)
-        );
+                customerService.getCustomerVehicleHistory(search));
     }
 
     @PatchMapping("/update-customer/{customerId}")
     public ResponseEntity<CustomerResponseDto> updateCustomer(
             @PathVariable Long customerId,
-            @Valid @RequestBody CustomerUpdateDto updateDto
-    ) {
+            @Valid @RequestBody CustomerUpdateDto updateDto) {
         return ResponseEntity.ok(customerService.updateCustomer(customerId, updateDto));
     }
+
 }
